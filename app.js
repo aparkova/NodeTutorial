@@ -1,12 +1,20 @@
-const path = require('path');
+//npm - global command, comes with node
+//npm --version
 
-console.log(path.sep)
+//local dependency - use it only in this particular project
+//npm i <packageName>
 
-const filePath = path.join('/content', 'subfolder', 'test.txt')
-console.log(filePath)
+//global dependency - use it in any project
+//npm install -g <packageName>
+//sudo install -g <packageName (mac, linux)
 
-const base = path.basename(filePath)
-console.log(base)
+//package.json - manifest file
+//manual approach - create package.json in the root, create properties etc
+//npm init (step by step, press enter to skip)
+//npm init -y (everything default)
 
-const absolute = path.resolve(__dirname, 'content', 'subfolder', 'test.txt')
-console.log(absolute)
+const _ = require('lodash')
+
+const items = [1, [2, [3, [4]]]]
+const newitems = _.flattenDeep(items)
+console.log(newitems)
